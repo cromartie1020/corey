@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    <title>Delete A Post</title>
+{% endblock %}
+
+{% block content %}
+   <div class='content-section'>
+    
+
+    <form action="" method='POST'>
+        {% csrf_token %}   
+        <fieldset class='form-group'>
+            <legend>
+                <h2>
+                    Are you sure you want to delete this post {{ object.title }}? 
+                </h2>
+            </legend>
+
+        </fieldset>       
+        <div class='form-group'>
+            <button class = 'btn btn-outline-danger' type='submit'>
+                Yes, Delete
+
+            </button>
+            <button class='btn btn-outline-secondary' type='submit'>
+            <a  href="{% url 'detail' object.id %}">Cancel</a>
+            </button>
+        </div>
+    </form>
+    
+   </div>
+   
+{% endblock %}
