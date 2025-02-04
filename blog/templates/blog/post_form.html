@@ -11,7 +11,7 @@
 
     <form action="" method='POST'>
         {% csrf_token %}   
-        {{ form|crispy }}
+        {{ form.as_p }}
         
         <div class='form-group'>
             <button class = 'btn btn-outline-info' type='submit'>

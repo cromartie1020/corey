@@ -16,9 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hrc345.ddns.net','localhost','127.0.0.1']
 
 
 # Application definition
@@ -71,10 +71,10 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config.get('NAME'),
-        'USER': config.get('USER'),
-        'PASSWORD': config.get('PASSWORD'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config['NAME'],
+        'USER': config['USER'],
+        'PASSWORD': config['PASSWORD'],
         'HOST': 'localhost',
         'PORT': 5432,
     }
